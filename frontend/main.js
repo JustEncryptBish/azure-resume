@@ -1,13 +1,16 @@
-const functionApi = 'http://localhost:7071/api/GetResumeCounter';
+
 
 window.addEventListener('DOMContentLoaded', (event) => {
     getVisitCount();
 });
 
+const functionApiUrl = 'https://tamindevfunctions.azurewebsites.net/api/ResumeFunction?code=ESzKHIh4oMYbNklgLmRBsqLDFVf/QNH0krqJdXmlu4kVLKHLVd9pdA=='
+const functionApi = 'http://localhost:7071/api/GetResumeCounter';
+
 
 const getVisitCount = () => {
     let count = 30;
-    fetch(functionApi).then(response => {
+    fetch(functionApiUrl).then(response => {
         return response.json()
     }).then(response => {
         console.log("Website called function API.");
